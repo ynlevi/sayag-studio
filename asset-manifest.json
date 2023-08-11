@@ -1,14 +1,13 @@
 {
   "files": {
-    "main.css": "/sayag-studio/static/css/main.b361ae3f.css",
-    "main.js": "/sayag-studio/static/js/main.b637375b.js",
-    "static/media/icon-logo.svg": "/sayag-studio/static/media/icon-logo.4f030685ff952c9c2981e118d5bdf686.svg",
+    "main.css": "/sayag-studio/static/css/main.aa26f147.css",
+    "main.js": "/sayag-studio/static/js/main.446f98c6.js",
     "index.html": "/sayag-studio/index.html",
-    "main.b361ae3f.css.map": "/sayag-studio/static/css/main.b361ae3f.css.map",
-    "main.b637375b.js.map": "/sayag-studio/static/js/main.b637375b.js.map"
+    "main.aa26f147.css.map": "/sayag-studio/static/css/main.aa26f147.css.map",
+    "main.446f98c6.js.map": "/sayag-studio/static/js/main.446f98c6.js.map"
   },
   "entrypoints": [
-    "static/css/main.b361ae3f.css",
-    "static/js/main.b637375b.js"
+    "static/css/main.aa26f147.css",
+    "static/js/main.446f98c6.js"
   ]
 }
