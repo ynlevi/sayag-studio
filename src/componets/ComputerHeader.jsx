@@ -15,14 +15,20 @@ export default function ComputerHeader() {
         >
           {navLinks.map((obj, i) => (
             <NavLink key={i} exact={"true"} to={obj.path}>
-              <motion.li
-                variants={castumLinkItem}
-                className="p-2  text-primary list-none font-extralight tracking-widest"
-                whileHover={{ color: "var(--primary-hover)" }}
-                whileTap={{ y: -4 }}
-              >
-                {obj.name}
-              </motion.li>
+              {({ isActive }) => (
+                <motion.li
+                  variants={castumLinkItem}
+                  className={`p-2 list-none  tracking-widest ${
+                    isActive
+                      ? "font-light text-primary-hover"
+                      : " text-primary font-extralight"
+                  }`}
+                  whileHover={!isActive && { color: "var(--primary-hover)" }}
+                  whileTap={{ y: -4 }}
+                >
+                  {obj.name}
+                </motion.li>
+              )}
             </NavLink>
           ))}
         </motion.nav>

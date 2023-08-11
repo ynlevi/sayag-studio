@@ -8,13 +8,5 @@
 }
 body {
   font-family: "inter", sans-serif;
-  /* light */
   background-color: var(--light);
-}
-.svg-container :hover path {
-  fill: var(--primary-hover);
-}
-.svg-container path {
-  fill: var(--primary);
-  transition: fill ease-in-out 0.2s;
 }

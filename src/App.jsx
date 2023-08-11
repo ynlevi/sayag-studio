@@ -26,7 +26,7 @@ function App() {
         ))}
         <Route exact={true} path="*" Component={NotFound} />
       </Routes>
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 }

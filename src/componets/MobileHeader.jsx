@@ -4,7 +4,7 @@ import BtnXMotion from "./BtnXMotion";
 import navLinks from "../data/links/navLinks";
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 // icons
 import { GiFullPizza } from "react-icons/gi";
@@ -65,13 +65,13 @@ const SideMenu = ({ handleClick }) => {
       >
         <motion.ul className="text-4xl flex justify-between py-5 px-3">
           <motion.li onClick={handleClick}>
-            <Logo className={" h-10 w-20 "} />
+            <Logo className={" h-10 w-20 top-0 -left-7 "} />
           </motion.li>
           <motion.li onClick={handleClick}>
             <BtnXMotion icon={<CgClose />} />
           </motion.li>
         </motion.ul>
-        <MenuLinks />
+        <MenuLinks handleClick={handleClick} />
       </motion.div>
       <motion.div
         key={1}
@@ -86,7 +86,7 @@ const SideMenu = ({ handleClick }) => {
   );
 };
 
-const MenuLinks = () => {
+const MenuLinks = ({ handleClick }) => {
   const castumLinkList = {
     open: {
       clipPath: "inset(0% 0% 0% 0% round 10px)",
@@ -123,15 +123,19 @@ const MenuLinks = () => {
       animate="open"
     >
       {navLinks.map((obj, i) => (
-        <Link key={i} exact={"true"} to={obj.path}>
-          <motion.li
-            className="my-3 ml-4 text-primary hover:text-primary-hover list-none font-bold"
-            variants={castumLinkItem}
-            whileHover={{ x: 10 }}
-          >
-            {obj.name}
-          </motion.li>
-        </Link>
+        <NavLink key={i} exact={"true"} to={obj.path}>
+          {({ isActive }) => (
+            <motion.li
+              className={`my-3 ml-4 list-none font-bold ${
+                isActive ? "text-primary-hover" : "text-primary "
+              }`}
+              variants={castumLinkItem}
+              onClick={handleClick}
+            >
+              {obj.name}
+            </motion.li>
+          )}
+        </NavLink>
       ))}
     </motion.ul>
   );

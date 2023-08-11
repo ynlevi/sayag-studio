@@ -12,8 +12,8 @@ import { useTranslation } from "react-i18next";
 export default function Header() {
   return (
     <>
-      <motion.div className=" w-full pt-0 flex justify-between md:flex-col md:ml-4">
-        <Logo className={"h-40 w-36"} />
+      <motion.div className=" w-full pt-0 flex justify-between md:flex-col ">
+        <Logo className={"h-20 w-40 top-2 -left-10"} />
         <MobileHeader />
         <ComputerHeader />
       </motion.div>
