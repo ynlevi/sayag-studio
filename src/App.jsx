@@ -3,7 +3,7 @@ import "./index.css";
 import "./castom.css";
 
 import Header from "./componets/Header";
-// import Footer from "./componets/Footer";
+import Footer from "./componets/Footer";
 import Home from "./pages/main/Home";
 import About from "./pages/main/About";
 import Projects from "./pages/main/Projects";
