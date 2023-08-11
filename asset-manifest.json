@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/ynlevi/sayag-studio.git/static/css/main.7a58dc7c.css",
-    "main.js": "/ynlevi/sayag-studio.git/static/js/main.6884098c.js",
+    "main.css": "/ynlevi/sayag-studio.git/static/css/main.b361ae3f.css",
+    "main.js": "/ynlevi/sayag-studio.git/static/js/main.af22d920.js",
     "static/media/icon-logo.svg": "/ynlevi/sayag-studio.git/static/media/icon-logo.4f030685ff952c9c2981e118d5bdf686.svg",
     "index.html": "/ynlevi/sayag-studio.git/index.html",
-    "main.7a58dc7c.css.map": "/ynlevi/sayag-studio.git/static/css/main.7a58dc7c.css.map",
-    "main.6884098c.js.map": "/ynlevi/sayag-studio.git/static/js/main.6884098c.js.map"
+    "main.b361ae3f.css.map": "/ynlevi/sayag-studio.git/static/css/main.b361ae3f.css.map",
+    "main.af22d920.js.map": "/ynlevi/sayag-studio.git/static/js/main.af22d920.js.map"
   },
   "entrypoints": [
-    "static/css/main.7a58dc7c.css",
-    "static/js/main.6884098c.js"
+    "static/css/main.b361ae3f.css",
+    "static/js/main.af22d920.js"
   ]
 }
