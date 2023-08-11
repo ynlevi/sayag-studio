@@ -1,4 +1,8 @@
-// bg-blend-color
+import Logo from "../../componets/Logo";
 export default function Home() {
-  return <div>home</div>;
+  return (
+    <>
+      <p className="text-gray-300">home</p>
+    </>
+  );
 }
