@@ -12,6 +12,9 @@ module.exports = {
         success: "#00acee",
         danger: "#FE0000",
       },
+      height: {
+        "90vh": "90vh",
+      },
     },
   },
   plugins: [],

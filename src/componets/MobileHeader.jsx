@@ -13,7 +13,7 @@ import { CgClose } from "react-icons/cg";
 
 export default function MobileHeader() {
   ////
-  const [isOpen, setOpen] = useState(true);
+  const [isOpen, setOpen] = useState(false);
   const toggleVisible = () => setOpen((prev) => !prev);
   return (
     <div className="md:hidden">
@@ -57,13 +57,13 @@ const SideMenu = ({ handleClick }) => {
     <>
       <motion.div
         key={0}
-        className="absolute top-0 right-0 w-1/2 z-10 bg-slate-200 h-screen shadow-2xl divide-y divide-gray-50"
+        className="absolute top-0 right-0 w-1/2 z-10 bg-slate-200 h-screen shadow-2xl divide-y divide-gray-50 overflow-hidden"
         variants={castomSideMenu}
         initial="isClose"
         animate="isOpen"
         exit="isClose"
       >
-        <motion.ul className="text-4xl flex justify-between py-5 px-3">
+        <motion.ul className="text-4xl flex justify-between py-5 px-3 overflow-hidden">
           <motion.li onClick={handleClick}>
             <Logo className={" h-10 w-20 top-0 -left-7 "} />
           </motion.li>
@@ -74,12 +74,12 @@ const SideMenu = ({ handleClick }) => {
         <MenuLinks handleClick={handleClick} />
       </motion.div>
       <motion.div
+        className="absolute inset-0 right-1/2 bg-primary cursor-pointer overflow-hidden"
         key={1}
         variants={castomOverlay}
         initial="isClose"
         animate="isOpen"
         exit="isClose"
-        className="absolute inset-0 right-1/2 bg-primary cursor-pointer"
         onClick={handleClick}
       />
     </>

@@ -10,7 +10,7 @@ export default function Logo({ className }) {
   const svgVarient = {};
   const pathVarient = {
     initial: {
-      fill: "var(--primary",
+      fill: "var(--primary)",
     },
     hover: {
       fill: "var(--primary-hover)",
