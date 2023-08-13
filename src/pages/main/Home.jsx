@@ -48,9 +48,10 @@ const MainVideo = ({ opacity, scale }) => (
 
 const BestImages = ({ imageRef, scrollYProgress }) => {
   const overflow = useMotionValue("hidden");
-  useMotionValueEvent(scrollYProgress, "change", (latest) =>
-    overflow.set(latest > 0 ? "hidden" : "auto")
-  );
+  useMotionValueEvent(scrollYProgress, "change", (latest) => {
+    console.log(latest);
+    return overflow.set(latest > 0.2 ? "hidden" : "auto");
+  });
   return (
     <motion.div
       className="w-full snap-y snap-mandatory h-screen bg-slate-100 "
