@@ -12,18 +12,22 @@ import {
   useMotionValue,
 } from "framer-motion";
 export default function Home() {
-  // const opacity = useTransform(scrollYProgress, [0.8, 0.2], [1, 0]);
-  // const scale = useTransform(scrollYProgress, [0.7, 0.3], [1, 2]);
-
+  const imageRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: imageRef,
+    offset: ["start", "start end"],
+  });
+  const opacity = useTransform(scrollYProgress, [0.8, 0.2], [1, 0]);
+  const scale = useTransform(scrollYProgress, [0.9, 0.3], [1, 2]);
   return (
-    <motion.div className="  ">
-      <MainVideo opacity={1} scale={1} />
-      <BestImages />
+    <motion.div className=" overflow-x-hidden ">
+      <MainVideo opacity={opacity} scale={scale} />
+      <BestImages imageRef={imageRef} scrollYProgress={scrollYProgress} />
     </motion.div>
   );
 }
 
-const MainVideo = ({ opacity, scale, vdRef }) => (
+const MainVideo = ({ opacity, scale }) => (
   <motion.div
     className="p-3 mx-auto h-90vh md:h-screen top-0 -z-10 sticky "
     style={{ opacity, scale }}
@@ -41,26 +45,20 @@ const MainVideo = ({ opacity, scale, vdRef }) => (
   </motion.div>
 );
 
-const BestImages = () => {
-  const imageRef = useRef(null);
-  const { scrollYProgress } = useScroll({
-    target: imageRef,
-    offset: ["start", "start end"],
+const BestImages = ({ imageRef, scrollYProgress }) => {
+  const overflowY = useTransform(scrollYProgress, (y) => {
+    return y > 0 ? "hidden" : "auto";
   });
-
-  const overflowY = useTransform(scrollYProgress, (y) =>
-    y > 0 ? "hidden" : "auto"
-  );
 
   return (
     <motion.div
-      className="w-full snap-y snap-mandatory h-screen  bg-red-100"
+      className="w-full snap-y snap-mandatory h-screen bg-slate-100 "
       ref={imageRef}
       style={{ overflowY }}
     >
       {bestImagesNames.map((name, i) => (
         <div
-          className="snap-start h-screen flex justify-center items-center"
+          className="snap-start h-screen  flex justify-center items-center"
           key={i}
         >
           <img
@@ -74,10 +72,11 @@ const BestImages = () => {
   );
 };
 const bestImagesNames = [
-  "africa-girls",
-  "bus-stop",
-  // "old-city-jerusalem",
-  // "romantic",
-  "truck-and-view",
   "zebra",
+  "africa-girls",
+
+  "old-city-jerusalem",
+  "truck-and-view",
+  "bus-stop",
+  "romantic",
 ];
