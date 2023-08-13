@@ -1,3 +1,8 @@
+import Header from "../../componets/Header";
 export default function About() {
-  return <h1>About</h1>;
+  return (
+    <div>
+      <div className="flex flex-col md:flex-row"></div>
+    </div>
+  );
 }
