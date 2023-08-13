@@ -1,5 +1,6 @@
 //local
 import mainVideo from "../../data/media/videos/main-vidoe.mp4";
+import { useInView } from "framer-motion";
 //npms
 import ReactPlayer from "react-player";
 import { useEffect, useRef } from "react";
@@ -11,17 +12,10 @@ import {
   useMotionValue,
 } from "framer-motion";
 export default function Home() {
-  // const imageRef = useRef(null);
-
-  // const { scrollYProgress } = useScroll({
-  //   target: imageRef,
-  //   offset: ["start", "start end"],
-  // });
-
   // const opacity = useTransform(scrollYProgress, [0.8, 0.2], [1, 0]);
   // const scale = useTransform(scrollYProgress, [0.7, 0.3], [1, 2]);
+
   return (
-    //
     <motion.div className="  ">
       <MainVideo opacity={1} scale={1} />
       <BestImages />
@@ -42,21 +36,27 @@ const MainVideo = ({ opacity, scale, vdRef }) => (
       className="player p-3 "
       width={"100%"}
       height={"100%"}
+      playsinline
     />
   </motion.div>
 );
 
-const BestImages = ({ imageRef }) => {
-  // const imageRef = useRef(null);
-  // const { scrollYProgress } = useScroll({
-  //   target: imageRef,
-  //   offset: [""],
-  // });
-  // useMotionValueEvent(scrollYProgress, "change", (l) => console.log("bla", l));
+const BestImages = () => {
+  const imageRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: imageRef,
+    offset: ["start", "start end"],
+  });
+
+  const overflowY = useTransform(scrollYProgress, (y) =>
+    y > 0 ? "hidden" : "auto"
+  );
+
   return (
     <motion.div
-      className="w-full snap-y snap-mandatory h-screen overflow-y-scroll bg-red-100"
+      className="w-full snap-y snap-mandatory h-screen  bg-red-100"
       ref={imageRef}
+      style={{ overflowY }}
     >
       {bestImagesNames.map((name, i) => (
         <div
