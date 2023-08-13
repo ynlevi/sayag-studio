@@ -17,6 +17,7 @@ export default function Home() {
     target: imageRef,
     offset: ["start", "start end"],
   });
+
   const opacity = useTransform(scrollYProgress, [0.8, 0.2], [1, 0]);
   const scale = useTransform(scrollYProgress, [0.9, 0.3], [1, 2]);
   return (
@@ -46,15 +47,15 @@ const MainVideo = ({ opacity, scale }) => (
 );
 
 const BestImages = ({ imageRef, scrollYProgress }) => {
-  const overflowY = useTransform(scrollYProgress, (y) => {
-    return y > 0 ? "hidden" : "auto";
-  });
-
+  const overflow = useMotionValue("hidden");
+  useMotionValueEvent(scrollYProgress, "change", (latest) =>
+    overflow.set(latest > 0 ? "hidden" : "auto")
+  );
   return (
     <motion.div
       className="w-full snap-y snap-mandatory h-screen bg-slate-100 "
       ref={imageRef}
-      style={{ overflowY }}
+      style={{ overflow }}
     >
       {bestImagesNames.map((name, i) => (
         <div
@@ -74,9 +75,8 @@ const BestImages = ({ imageRef, scrollYProgress }) => {
 const bestImagesNames = [
   "zebra",
   "africa-girls",
-
-  "old-city-jerusalem",
   "truck-and-view",
   "bus-stop",
   "romantic",
 ];
+// "old-city-jerusalem",
