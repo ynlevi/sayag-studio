@@ -4,7 +4,7 @@
   --primary-hover: #6f61c0;
   /* // secondary: "",
   // scondaryHover: "", */
-  --light: "#f2f2f2";
+  --light: #f2f2f2;
 }
 body {
   font-family: "inter", sans-serif;

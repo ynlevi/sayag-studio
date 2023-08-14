@@ -1,3 +1,6 @@
+import { motion } from "framer-motion";
 export default function Contact() {
-  return <div>bla</div>;
+  return (
+    <motion.div className="bg-slate-100 min-h-screen">contact us</motion.div>
+  );
 }
