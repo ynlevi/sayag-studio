@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/sayag-studio/static/css/main.b52537c1.css",
-    "main.js": "/sayag-studio/static/js/main.0f98e44f.js",
+    "main.css": "/sayag-studio/static/css/main.97ac7899.css",
+    "main.js": "/sayag-studio/static/js/main.d7f4412b.js",
     "static/media/old-city-jerusalem.jpg": "/sayag-studio/static/media/old-city-jerusalem.f67a70be763f68cdee3d.jpg",
     "static/media/video2-1080p.mp4": "/sayag-studio/static/media/video2-1080p.cf72de3664c5a3f65a95.mp4",
     "static/media/video3-1080p.mp4": "/sayag-studio/static/media/video3-1080p.c845ca305fdca19e204e.mp4",
@@ -13,11 +13,11 @@
     "static/media/profile.jpg": "/sayag-studio/static/media/profile.1df4a57c51cdfc3b8573.jpg",
     "static/media/romantic.jpg": "/sayag-studio/static/media/romantic.fa795c4323d583a4611b.jpg",
     "index.html": "/sayag-studio/index.html",
-    "main.b52537c1.css.map": "/sayag-studio/static/css/main.b52537c1.css.map",
-    "main.0f98e44f.js.map": "/sayag-studio/static/js/main.0f98e44f.js.map"
+    "main.97ac7899.css.map": "/sayag-studio/static/css/main.97ac7899.css.map",
+    "main.d7f4412b.js.map": "/sayag-studio/static/js/main.d7f4412b.js.map"
   },
   "entrypoints": [
-    "static/css/main.b52537c1.css",
-    "static/js/main.0f98e44f.js"
+    "static/css/main.97ac7899.css",
+    "static/js/main.d7f4412b.js"
   ]
 }
