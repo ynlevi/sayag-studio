@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import profileImg from "../../data/media/images/profile.jpg";
 import Header from "../../componets/Header";
+import BtnAction from "../../componets/BtnAction";
 import { motion, useMotionValue, useTransform } from "framer-motion";
 import { useEffect } from "react";
 export default function About() {
@@ -28,16 +29,7 @@ export default function About() {
           </p>
           <div>
             <Link to={"/contact-us"}>
-              <motion.div
-                className="text-lg h-full px-3 py-2 my-4 border-primary rounded-lg font-bold md:font-light border-2 md:border text-primary w-fit "
-                whileTap={{ scale: 0.8 }}
-                whileHover={{
-                  backgroundColor: "var(--primary)",
-                  color: "var(--light)",
-                }}
-              >
-                Contact Us
-              </motion.div>
+              <BtnAction field={"Contact Us"} className={"my-4"} />
             </Link>
           </div>
         </div>
