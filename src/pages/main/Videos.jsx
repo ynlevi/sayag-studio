@@ -6,11 +6,13 @@ import Video2 from "../../data/media/videos/video2-1080p.mp4";
 import Video3 from "../../data/media/videos/video3-1080p.mp4";
 export default function Videos() {
   return (
-    <motion.div className="h-90vh md:h-screen snap-x snap-mandatory overflow-x-scroll w-full divide-x flex  p-4 gap-4 bg-secondary">
-      {urls.map((url, i) => (
-        <Media key={i} name={url} i={i} className={null} />
-      ))}
-    </motion.div>
+    <div className="bg-slate-100 absolute md:static">
+      <motion.div className="h-90vh md:h-screen snap-x snap-mandatory overflow-x-scroll w-full divide-x flex  p-4 gap-4 bg-secondary">
+        {urls.map((url, i) => (
+          <Media key={i} name={url} i={i} className={null} />
+        ))}
+      </motion.div>
+    </div>
   );
 }
 const urls = [Main, Video2, Video3];

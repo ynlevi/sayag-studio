@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 export default function Contact() {
   return (
-    <motion.div>
+    <motion.div className="bg-slate-100 absolute md:static">
       <motion.div>
         <h2>our office</h2>
         <a href="#">addres 234, jerusalem </a>
@@ -17,6 +17,7 @@ export default function Contact() {
           <a href></a>
         </motion.li>
       </motion.ul>
+      <div className="w-32 h-screen"></div>
     </motion.div>
   );
 }

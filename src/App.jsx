@@ -26,16 +26,14 @@ function App() {
           className="w-screen md:w-full -z-10 relative md:static md:z-0"
           ref={primaryRef}
         >
-          <div className="bg-slate-100 absolute md:static">
-            <Routes>
-              {navLinks.map((elm, i) => (
-                <Route key={i} exact path={elm.path} Component={elm.name} />
-              ))}
-              <Route exact={true} path="*" Component={NotFound} />
-            </Routes>
+          <Routes>
+            {navLinks.map((elm, i) => (
+              <Route key={i} exact path={elm.path} Component={elm.name} />
+            ))}
+            <Route exact={true} path="*" Component={NotFound} />
+          </Routes>
 
-            {/* footer */}
-          </div>
+          {/* footer */}
         </div>
       </div>
     </>

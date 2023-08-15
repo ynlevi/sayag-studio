@@ -13,11 +13,13 @@ import {
 } from "framer-motion";
 export default function Photos() {
   return (
-    <motion.div className="snap-y snap-mandatory h-[90vh] md:h-screen overflow-scroll divide-y">
-      {bestImagesNames.map((imageObj, i) => (
-        <Media key={i} {...imageObj} i={i} />
-      ))}
-    </motion.div>
+    <div className="bg-slate-100 absolute md:static">
+      <motion.div className="snap-y snap-mandatory h-[90vh] md:h-screen overflow-scroll divide-y">
+        {bestImagesNames.map((imageObj, i) => (
+          <Media key={i} {...imageObj} i={i} />
+        ))}
+      </motion.div>
+    </div>
   );
 }
 
