@@ -5,7 +5,7 @@ import { useState } from "react";
 // import LogoBtn from "./LogoBtn";
 import dArr from "../data/media/icons/logo-obj";
 
-export default function Logo({ className }) {
+export default function Logo({ className, primaryRef }) {
   const [isHover, setHover] = useState(false);
   const svgVarient = {};
   const pathVarient = {
@@ -16,8 +16,11 @@ export default function Logo({ className }) {
       fill: "var(--primary-hover)",
     },
   };
+  //go to the main page;
+  const scrollTo = () =>
+    primaryRef.current.scrollTo({ behavior: "smooth", top: 0, left: 0 });
   return (
-    <Link to={"/"}>
+    <Link to={"/"} onClick={scrollTo}>
       <motion.div
         className={`${className} relative overflow-hidden svg-container`}
         onHoverStart={() => setHover(true)}

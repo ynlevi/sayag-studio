@@ -1,7 +1,7 @@
 const navLinks = [
-  { name: "Home", path: "/" },
+  { name: "Photos", path: "/" },
+  { name: "Videos", path: "videos" },
   { name: "About", path: "about" },
-  { name: "Projects", path: "projects" },
   { name: "Contact Us", path: "contact-us" },
 ];
 export default navLinks;
