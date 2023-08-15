@@ -22,15 +22,20 @@ function App() {
     <>
       <div className="flex flex-col md:flex-row">
         <Header primaryRef={primaryRef} />
-        <div className="w-screen" ref={primaryRef}>
-          <Routes>
-            {navLinks.map((elm, i) => (
-              <Route key={i} exact path={elm.path} Component={elm.name} />
-            ))}
-            <Route exact={true} path="*" Component={NotFound} />
-          </Routes>
+        <div
+          className="w-screen md:w-full -z-10 relative md:static md:z-0"
+          ref={primaryRef}
+        >
+          <div className="bg-slate-100 absolute md:static">
+            <Routes>
+              {navLinks.map((elm, i) => (
+                <Route key={i} exact path={elm.path} Component={elm.name} />
+              ))}
+              <Route exact={true} path="*" Component={NotFound} />
+            </Routes>
 
-          {/* footer */}
+            {/* footer */}
+          </div>
         </div>
       </div>
     </>

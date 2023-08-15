@@ -11,7 +11,7 @@ import { GiFullPizza } from "react-icons/gi";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { CgClose } from "react-icons/cg";
 
-export default function MobileHeader() {
+export default function MobileHeader({ primaryRef }) {
   ////
   const [isOpen, setOpen] = useState(false);
   const toggleVisible = () => setOpen((prev) => !prev);
@@ -27,13 +27,19 @@ export default function MobileHeader() {
         )}
       </AnimatePresence>
       <AnimatePresence>
-        {isOpen && <SideMenu handleClick={toggleVisible} isOpen={isOpen} />}
+        {isOpen && (
+          <SideMenu
+            handleClick={toggleVisible}
+            isOpen={isOpen}
+            primaryRef={primaryRef}
+          />
+        )}
       </AnimatePresence>
     </div>
   );
 }
 
-const SideMenu = ({ handleClick }) => {
+const SideMenu = ({ handleClick, primaryRef }) => {
   const castomSideMenu = {
     isClose: { x: "100%", transition: { delay: 0, type: "tween" } },
     isOpen: { x: 0, transition: { duration: 0.15, type: "tween", delay: 0.3 } },
@@ -65,7 +71,10 @@ const SideMenu = ({ handleClick }) => {
       >
         <motion.ul className="text-4xl flex justify-between py-5 px-3 ">
           <motion.li onClick={handleClick}>
-            <Logo className={" h-10 w-20 top-0 -left-7 "} />
+            <Logo
+              className={" h-10 w-20 top-0 -left-7 "}
+              primaryRef={primaryRef}
+            />
           </motion.li>
           <motion.li onClick={handleClick}>
             <BtnXMotion icon={<CgClose />} />

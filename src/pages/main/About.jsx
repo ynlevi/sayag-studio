@@ -5,7 +5,7 @@ import { motion, useMotionValue, useTransform } from "framer-motion";
 import { useEffect } from "react";
 export default function About() {
   return (
-    <div className=" bg-slate-100 flex flex-col lg:flex-row-reverse min-h-screen ">
+    <div className="flex flex-col lg:flex-row-reverse min-h-screen ">
       <div className="p-4 h-90vh md:h-screen mx-auto my-auto">
         <img
           className="max-h-full w-ful mx-auto object-cover"
