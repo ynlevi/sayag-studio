@@ -1,17 +1,19 @@
 import { motion } from "framer-motion";
 import ReactPlayer from "react-player";
+import Footer from "../../componets/Footer";
 
 import Main from "../../data/media/videos/main-video-1080p.mp4";
 import Video2 from "../../data/media/videos/video2-1080p.mp4";
 import Video3 from "../../data/media/videos/video3-1080p.mp4";
 export default function Videos() {
   return (
-    <div className="bg-slate-100 absolute md:static">
+    <div className="bg-slate-100 absolute inset-0">
       <motion.div className="h-90vh md:h-screen snap-x snap-mandatory overflow-x-scroll w-full divide-x flex  p-4 gap-4 bg-secondary">
         {urls.map((url, i) => (
           <Media key={i} name={url} i={i} className={null} />
         ))}
       </motion.div>
+      <Footer />
     </div>
   );
 }

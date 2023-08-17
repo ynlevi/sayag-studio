@@ -1,3 +1,15 @@
-export default function Footer() {
-  return <h1 className="absolute bottom-1 left-0 textpink">I'm going to be</h1>;
+import { useTranslation } from "react-i18next";
+export default function Footer({ className }) {
+  const { t } = useTranslation();
+  return (
+    <div className="mx-auto w-fit">
+      <a
+        href="https://ynlevi.github.io/CV/"
+        className={`w-fit text-sm text-primary py-2 ${className}`}
+      >
+        {t("footer.a") + " " + currentYear}
+      </a>
+    </div>
+  );
 }
+const currentYear = new Date().getFullYear();

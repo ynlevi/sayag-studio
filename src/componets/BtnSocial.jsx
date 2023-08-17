@@ -9,9 +9,8 @@ export default function BtnSocial({ icon, className, href }) {
         color: "var(--light)",
         scale: 1.1,
       }}
-      href={href}
     >
-      {icon}
+      <a href={href}>{icon}</a>
     </motion.div>
   );
 }

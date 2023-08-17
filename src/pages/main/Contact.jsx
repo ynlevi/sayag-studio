@@ -12,21 +12,29 @@ import {
   FaWhatsapp,
   FaYoutube,
 } from "react-icons/fa";
-
+import Footer from "../../componets/Footer";
+import { useTranslation } from "react-i18next";
 export default function Contact() {
+  const { t } = useTranslation();
   return (
-    <motion.div className="bg-slate-100 absolute md:static w-full flex flex-col divide-secondary divide-y-2 px-4 gap-10 md:px20 lg:px-32">
-      <Section castomCompo={<Location />} hl={"our office"} />
-      <Section
-        castomCompo={<Action />}
-        hl={"Let's be in touch"}
-        castomUl={"flex gap-4 md:gap-20"}
-      />
-      <Section
-        castomCompo={<Social />}
-        castomUl={"flex justify-between mb-8 max-w-md mx-auto"}
-      />
-    </motion.div>
+    <>
+      <motion.div className="bg-slate-100 w-full flex flex-col divide-secondary divide-y-2 px-4 gap-10 md:px20 lg:px-32">
+        <Section
+          castomCompo={<Location address={t("contact.location.address")} />}
+          hl={t("contact.location.hl")}
+        />
+        <Section
+          castomCompo={<Action />}
+          hl={t("contact.action.hl")}
+          castomUl={"flex gap-4 md:gap-20"}
+        />
+        <Section
+          castomCompo={<Social />}
+          castomUl={"flex justify-between mb-8 max-w-md mx-auto"}
+        />
+      </motion.div>
+      <Footer className={"mt-8"} />
+    </>
   );
 }
 //section
@@ -37,19 +45,18 @@ const Section = ({ castomCompo, castomUl, hl }) => (
   </motion.div>
 );
 
-const Location = () => (
+const Location = ({ address }) => (
   <>
     <li>
       <a className="my-4 block" href="https://goo.gl/maps/afUhMGiEkC2MkXTDA">
-        HaUman St 14, Jerusalem, Israel
+        {address}
       </a>
     </li>
     <li>
       <iframe
         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3392.725213585983!2d35.20972969999999!3d31.7507006!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1502d7e38c84bedd%3A0x47566a60d23d6788!2sHaUman%20St%2014%2C%20Jerusalem%2C%20Israel!5e0!3m2!1sen!2sth!4v1692089826089!5m2!1sen!2sth"
-        allowfullscreen=""
         loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade"
+        referrerPolicy="no-referrer-when-downgrade"
         className="w-full h-[50vh]  border border-secondary"
       />
     </li>
@@ -57,9 +64,10 @@ const Location = () => (
 );
 const Action = () => (
   <>
-    {actionLinks.map(({ href, text, icon }) => (
+    {actionLinks.map(({ href, icon }) => (
       <li className="flex-1">
         <BtnAction
+          href={href}
           className={"w-full py-3 md:py-4"}
           field={<div className="text-center flex justify-center">{icon}</div>}
         />
@@ -94,8 +102,8 @@ const socialLinks = [
   },
 ];
 const actionLinks = [
-  { href: null, icon: <TfiEmail size={27} /> },
-  { href: null, icon: <BsTelephone size={24} /> },
+  { href: "mailto:sayagofek058@gmail.com", icon: <TfiEmail size={27} /> },
+  { href: "tel:0587005838", icon: <BsTelephone size={24} /> },
 ];
 
 // const targetRef = useRef(null);

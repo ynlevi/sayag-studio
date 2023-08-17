@@ -1,23 +1,20 @@
-import navLinks from "../data/links/navLinks";
 import { NavLink } from "react-router-dom";
 import { motion } from "framer-motion";
-export default function ComputerHeader() {
-  const castumLinkList = {};
-  const castumLinkItem = {};
+import LanguageSwitcher from "./LanguageSwitcher";
+import { useTranslation } from "react-i18next";
+export default function ComputerHeader({ navLinks }) {
+  const { t } = useTranslation();
   return (
     <div className="hidden md:block">
-      <ul>
-        <motion.nav
-          className="flex flex-col gap-4 my-6 ml-2 w-fit text-sm"
-          variants={castumLinkList}
-          initial="closed"
-          animate="open"
-        >
-          {navLinks.map((obj, i) => (
-            <NavLink key={i} exact={"true"} to={obj.path}>
+      <div className="ml-3 mt-4 mb-8 text-primary font-light ">
+        <LanguageSwitcher />
+      </div>
+      <motion.nav>
+        <ul className="flex flex-col gap-4 my-6 ml-2 w-fit text-sm">
+          {navLinks.map((link, i) => (
+            <NavLink key={i} exact={"true"} to={link}>
               {({ isActive }) => (
                 <motion.li
-                  variants={castumLinkItem}
                   className={`p-2 list-none  tracking-widest ${
                     isActive
                       ? "font-light text-primary-hover"
@@ -26,13 +23,13 @@ export default function ComputerHeader() {
                   whileHover={!isActive && { color: "var(--primary-hover)" }}
                   whileTap={{ y: -4 }}
                 >
-                  {obj.name}
+                  {t(`navbar.${link}`)}
                 </motion.li>
               )}
             </NavLink>
           ))}
-        </motion.nav>
-      </ul>
+        </ul>
+      </motion.nav>
     </div>
   );
 }

@@ -1,17 +1,15 @@
 import Logo from "./Logo";
-
 import BtnXMotion from "./BtnXMotion";
-import navLinks from "../data/links/navLinks";
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Link, NavLink } from "react-router-dom";
-
+import LanguageSwitcher from "./LanguageSwitcher";
 // icons
 import { GiFullPizza } from "react-icons/gi";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { CgClose } from "react-icons/cg";
-
-export default function MobileHeader({ primaryRef }) {
+import { useTranslation } from "react-i18next";
+export default function MobileHeader({ primaryRef, navLinks }) {
   ////
   const [isOpen, setOpen] = useState(false);
   const toggleVisible = () => setOpen((prev) => !prev);
@@ -32,6 +30,7 @@ export default function MobileHeader({ primaryRef }) {
             handleClick={toggleVisible}
             isOpen={isOpen}
             primaryRef={primaryRef}
+            navLinks={navLinks}
           />
         )}
       </AnimatePresence>
@@ -39,7 +38,7 @@ export default function MobileHeader({ primaryRef }) {
   );
 }
 
-const SideMenu = ({ handleClick, primaryRef }) => {
+const SideMenu = ({ handleClick, primaryRef, navLinks }) => {
   const castomSideMenu = {
     isClose: { x: "100%", transition: { delay: 0, type: "tween" } },
     isOpen: { x: 0, transition: { duration: 0.15, type: "tween", delay: 0.3 } },
@@ -76,11 +75,15 @@ const SideMenu = ({ handleClick, primaryRef }) => {
               primaryRef={primaryRef}
             />
           </motion.li>
+
           <motion.li onClick={handleClick}>
             <BtnXMotion icon={<CgClose />} />
           </motion.li>
         </motion.ul>
-        <MenuLinks handleClick={handleClick} />
+        <div className="text-primary pl-3 py-3">
+          <LanguageSwitcher />
+        </div>
+        <MenuLinks handleClick={handleClick} navLinks={navLinks} />
       </motion.div>
       <motion.div
         className="z-40 absolute h-screen inset-0 right-1/2 bg-primary cursor-pointer "
@@ -95,7 +98,8 @@ const SideMenu = ({ handleClick, primaryRef }) => {
   );
 };
 
-const MenuLinks = ({ handleClick }) => {
+const MenuLinks = ({ handleClick, navLinks }) => {
+  const { t } = useTranslation();
   const castumLinkList = {
     open: {
       clipPath: "inset(0% 0% 0% 0% round 10px)",
@@ -131,8 +135,8 @@ const MenuLinks = ({ handleClick }) => {
       initial="closed"
       animate="open"
     >
-      {navLinks.map((obj, i) => (
-        <NavLink key={i} exact={"true"} to={obj.path}>
+      {navLinks.map((link, i) => (
+        <NavLink key={i} exact={"true"} to={link}>
           {({ isActive }) => (
             <motion.li
               className={`my-3 ml-4 list-none font-bold ${
@@ -141,7 +145,7 @@ const MenuLinks = ({ handleClick }) => {
               variants={castumLinkItem}
               onClick={handleClick}
             >
-              {obj.name}
+              {t(`navbar.${link}`)}
             </motion.li>
           )}
         </NavLink>
