@@ -7,7 +7,7 @@ function LanguageSwitcher() {
       <select
         value={i18n.language}
         onChange={(e) => i18n.changeLanguage(e.target.value)}
-        className="bg-transparent"
+        className="bg-transparent cursor-pointer"
       >
         <option value="en">English</option> <option value="he">עברית</option>
       </select>
