@@ -16,9 +16,19 @@ import Footer from "../../componets/Footer";
 import { useTranslation } from "react-i18next";
 export default function Contact() {
   const { t } = useTranslation();
+  const varient = {
+    hidden: {},
+    showen: { transition: { duration: 2, staggerChildren: 1 } },
+  };
+
   return (
     <>
-      <motion.div className="bg-slate-100 w-full flex flex-col divide-secondary divide-y-2 px-4 gap-10 md:px20 lg:px-32 ">
+      <motion.div
+        className="bg-slate-100 w-full flex flex-col divide-secondary divide-y-2 px-4 gap-10 md:px20 lg:px-32 "
+        variants={varient}
+        initial="hidden"
+        whileInView="showen"
+      >
         <Section
           castomCompo={<Location address={t("contact.location.address")} />}
           hl={t("contact.location.hl")}
@@ -37,12 +47,18 @@ export default function Contact() {
   );
 }
 //section
-const Section = ({ castomCompo, castomUl, hl }) => (
-  <motion.div className="pt-8">
-    <h2 className="text-3xl mt-2 mb-8 font-light">{hl}</h2>
-    <ul className={castomUl}>{castomCompo}</ul>
-  </motion.div>
-);
+const Section = ({ castomCompo, castomUl, hl }) => {
+  const item = {
+    hidden: { y: 100, opacity: 0 },
+    showen: { y: 0, opacity: 1, transition: { duration: 1 } },
+  };
+  return (
+    <motion.div className="pt-8" variants={item}>
+      <h2 className="text-3xl mt-2 mb-8 font-light">{hl}</h2>
+      <ul className={castomUl}>{castomCompo}</ul>
+    </motion.div>
+  );
+};
 
 const Location = ({ address }) => (
   <>
