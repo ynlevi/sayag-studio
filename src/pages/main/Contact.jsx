@@ -18,7 +18,7 @@ export default function Contact() {
   const { t } = useTranslation();
   return (
     <>
-      <motion.div className="bg-slate-100 w-full flex flex-col divide-secondary divide-y-2 px-4 gap-10 md:px20 lg:px-32">
+      <motion.div className="bg-slate-100 w-full flex flex-col divide-secondary divide-y-2 px-4 gap-10 md:px20 lg:px-32 ">
         <Section
           castomCompo={<Location address={t("contact.location.address")} />}
           hl={t("contact.location.hl")}
@@ -33,14 +33,13 @@ export default function Contact() {
           castomUl={"flex justify-between mb-8 max-w-md mx-auto"}
         />
       </motion.div>
-      <Footer className={"mt-8"} />
     </>
   );
 }
 //section
 const Section = ({ castomCompo, castomUl, hl }) => (
   <motion.div className="pt-8">
-    <h2 className="text-3xl mt-2 mb-8">{hl}</h2>
+    <h2 className="text-3xl mt-2 mb-8 font-light">{hl}</h2>
     <ul className={castomUl}>{castomCompo}</ul>
   </motion.div>
 );
@@ -48,7 +47,10 @@ const Section = ({ castomCompo, castomUl, hl }) => (
 const Location = ({ address }) => (
   <>
     <li>
-      <a className="my-4 block" href="https://goo.gl/maps/afUhMGiEkC2MkXTDA">
+      <a
+        className="my-4 block font-light"
+        href="https://goo.gl/maps/afUhMGiEkC2MkXTDA"
+      >
         {address}
       </a>
     </li>
@@ -65,7 +67,7 @@ const Location = ({ address }) => (
 const Action = () => (
   <>
     {actionLinks.map(({ href, icon }) => (
-      <li className="flex-1">
+      <li className="flex-1" key={href}>
         <BtnAction
           href={href}
           className={"w-full py-3 md:py-4"}
@@ -78,7 +80,7 @@ const Action = () => (
 const Social = ({ castomUl }) => (
   <>
     {socialLinks.map(({ href, icon, castomUl }) => (
-      <li className="w-fit">
+      <li className="w-fit" key={href}>
         <BtnSocial icon={icon} href={href} />
       </li>
     ))}

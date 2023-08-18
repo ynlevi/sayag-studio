@@ -7,14 +7,11 @@ import Video2 from "../../data/media/videos/video2-1080p.mp4";
 import Video3 from "../../data/media/videos/video3-1080p.mp4";
 export default function Videos() {
   return (
-    <div className="bg-slate-100 absolute inset-0">
-      <motion.div className="h-90vh md:h-screen snap-x snap-mandatory overflow-x-scroll w-full divide-x flex  p-4 gap-4 bg-secondary">
-        {urls.map((url, i) => (
-          <Media key={i} name={url} i={i} className={null} />
-        ))}
-      </motion.div>
-      <Footer />
-    </div>
+    <motion.div className="h-90vh md:h-screen snap-x snap-mandatory overflow-x-scroll w-full divide-x flex  p-4 gap-4 bg-secondary">
+      {urls.map((url, i) => (
+        <Media key={i} name={url} i={i} className={null} />
+      ))}
+    </motion.div>
   );
 }
 const urls = [Main, Video2, Video3];
@@ -30,7 +27,7 @@ const Media = ({ name, i, className }) => {
         playing={true}
         loop={true}
         muted={true}
-        className="player p-3 border-2 border-secondary"
+        className="player p-3 border-2 border-secondary "
         width={"100%"}
         height={"100%"}
         playsinline

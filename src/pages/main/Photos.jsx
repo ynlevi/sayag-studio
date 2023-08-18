@@ -4,26 +4,14 @@ import mainVideo from "../../data/media/videos/main-video-1080p.mp4";
 import ReactPlayer from "react-player";
 import Footer from "../../componets/Footer";
 import { useEffect, useRef } from "react";
-import {
-  motion,
-  useScroll,
-  useMotionValueEvent,
-  useTransform,
-  useMotionValue,
-  useInView,
-} from "framer-motion";
+import { motion } from "framer-motion";
 export default function Photos() {
   return (
-    <>
-      <div className="bg-slate-100 absolute md:static">
-        <motion.div className="snap-y snap-mandatory h-[90vh] md:h-screen overflow-scroll divide-y">
-          {bestImagesNames.map((imageObj, i) => (
-            <Media key={i} {...imageObj} i={i} />
-          ))}
-        </motion.div>
-      </div>
-      <Footer />
-    </>
+    <motion.div className="snap-y snap-mandatory h-90vh md:h-screen overflow-scroll divide-y ">
+      {bestImagesNames.map((imageObj, i) => (
+        <Media key={i} {...imageObj} i={i} />
+      ))}
+    </motion.div>
   );
 }
 

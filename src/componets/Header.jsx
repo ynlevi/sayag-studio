@@ -12,7 +12,7 @@ import { useTranslation } from "react-i18next";
 export default function Header({ primaryRef }) {
   return (
     // md:fixed md:top-0 md:left-0
-    <motion.div className=" w-full pt-0 flex justify-between md:justify-normal md:gap-0 top-0 left-0 md:flex-col md:w-fit bg-white md:pt-3 md:h-screen sticky md:shadow-xl">
+    <motion.div className=" w-full pt-0 flex justify-between md:justify-normal md:gap-0 top-0 left-0 md:flex-col md:w-fit bg-white md:pt-3 md:h-screen sticky z-10 md:shadow-xl">
       <Logo className={"h-20 w-40 top-0 -left-10"} primaryRef={primaryRef} />
       <MobileHeader primaryRef={primaryRef} navLinks={navLinks} />
       <ComputerHeader navLinks={navLinks} />

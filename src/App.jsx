@@ -25,11 +25,7 @@ function App() {
     <>
       <div className="flex flex-col md:flex-row ">
         <Header primaryRef={primaryRef} />
-        <div
-          className="w-screen md:w-full -z-10 relative inset-0 md:static md:z-0"
-          ref={primaryRef}
-          dir="auto"
-        >
+        <div className="w-screen md:w-full " ref={primaryRef} dir="auto">
           <Routes>
             {navLinks.map((elm, i) => (
               <Route key={i} exact path={elm.path} Component={elm.name} />
@@ -38,6 +34,7 @@ function App() {
             <Route path="/" element={<Navigate to="/photos" />} />
             <Route exact={true} path="*" Component={NotFound} />
           </Routes>
+          <Footer />
         </div>
       </div>
     </>

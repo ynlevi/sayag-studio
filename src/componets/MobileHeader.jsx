@@ -62,7 +62,7 @@ const SideMenu = ({ handleClick, primaryRef, navLinks }) => {
     <>
       <motion.div
         key={0}
-        className="absolute top-0 right-0 w-1/2 z-50 bg-slate-200 h-screen shadow-2xl divide-y divide-gray-50 "
+        className="absolute w-1/2 top-0 right-0  bg-slate-200 h-screen shadow-2xl divide-y divide-gray-50 "
         variants={castomSideMenu}
         initial="isClose"
         animate="isOpen"
@@ -86,7 +86,7 @@ const SideMenu = ({ handleClick, primaryRef, navLinks }) => {
         <MenuLinks handleClick={handleClick} navLinks={navLinks} />
       </motion.div>
       <motion.div
-        className="z-40 absolute h-screen inset-0 right-1/2 bg-primary cursor-pointer "
+        className="h-screen inset-0 right-1/2 bg-primary cursor-pointer absolute -z-40 "
         key={1}
         variants={castomOverlay}
         initial="isClose"

@@ -10,7 +10,7 @@ export default function BtnAction({ field, className, onClick, href }) {
       }}
       onClick={onClick}
     >
-      <a href={href}>{field}</a>
+      {href ? <a href={href}>{field}</a> : field}
     </motion.div>
   );
 }
