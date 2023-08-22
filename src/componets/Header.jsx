@@ -41,4 +41,4 @@ function ChangeLang() {
   );
 }
 ///mobile code until here
-const navLinks = ["photos", "videos", "about", "contact-us"];
+const navLinks = ["videos", "photos", "about", "contact-us"];

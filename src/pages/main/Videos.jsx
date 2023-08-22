@@ -1,8 +1,8 @@
 import { motion } from "framer-motion";
 import ReactPlayer from "react-player";
-import Footer from "../../componets/Footer";
 
 import Main from "../../data/media/videos/main-video-1080p.mp4";
+import Video1 from "../../data/media/videos/video1-1080p.mp4";
 import Video2 from "../../data/media/videos/video2-1080p.mp4";
 import Video3 from "../../data/media/videos/video3-1080p.mp4";
 export default function Videos() {
@@ -14,7 +14,7 @@ export default function Videos() {
     </motion.div>
   );
 }
-const urls = [Main, Video2, Video3];
+const urls = [Main, Video1, Video2, Video3];
 const Media = ({ name, i, className }) => {
   return (
     <motion.div

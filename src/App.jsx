@@ -13,8 +13,8 @@ import { useRef } from "react";
 import { Navigate } from "react-router-dom";
 
 const navLinks = [
-  { name: Photos, path: "photos" },
   { name: Videos, path: "videos" },
+  { name: Photos, path: "photos" },
   { name: About, path: "about" },
   { name: ContactUs, path: "contact-us" },
 ];
@@ -31,7 +31,7 @@ function App() {
               <Route key={i} exact path={elm.path} Component={elm.name} />
             ))}
 
-            <Route path="/" element={<Navigate to="/photos" />} />
+            <Route path="/" element={<Navigate to="/videos" />} />
             <Route exact={true} path="*" Component={NotFound} />
           </Routes>
           <Footer />
