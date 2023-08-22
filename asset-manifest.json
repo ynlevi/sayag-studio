@@ -1,11 +1,12 @@
 {
   "files": {
     "main.css": "/sayag-studio/static/css/main.e0299534.css",
-    "main.js": "/sayag-studio/static/js/main.67d3279e.js",
+    "main.js": "/sayag-studio/static/js/main.6025d8f0.js",
     "static/media/old-city-jerusalem.jpg": "/sayag-studio/static/media/old-city-jerusalem.f67a70be763f68cdee3d.jpg",
     "static/media/video2-1080p.mp4": "/sayag-studio/static/media/video2-1080p.cf72de3664c5a3f65a95.mp4",
+    "static/media/main-video-1080p.mp4": "/sayag-studio/static/media/main-video-1080p.44f704b2a8226418b018.mp4",
     "static/media/video3-1080p.mp4": "/sayag-studio/static/media/video3-1080p.c845ca305fdca19e204e.mp4",
-    "static/media/main-video-1080p.mp4": "/sayag-studio/static/media/main-video-1080p.20122b454f9bd049ba38.mp4",
+    "static/media/video1-1080p.mp4": "/sayag-studio/static/media/video1-1080p.20122b454f9bd049ba38.mp4",
     "static/media/zebra.jpg": "/sayag-studio/static/media/zebra.0a7207b5a9f39360aad3.jpg",
     "static/media/africa-girls.jpg": "/sayag-studio/static/media/africa-girls.79edb156191d673ba1e0.jpg",
     "static/media/bus-stop.jpg": "/sayag-studio/static/media/bus-stop.2b03b11f8a81d3ad259f.jpg",
@@ -14,10 +15,10 @@
     "static/media/romantic.jpg": "/sayag-studio/static/media/romantic.fa795c4323d583a4611b.jpg",
     "index.html": "/sayag-studio/index.html",
     "main.e0299534.css.map": "/sayag-studio/static/css/main.e0299534.css.map",
-    "main.67d3279e.js.map": "/sayag-studio/static/js/main.67d3279e.js.map"
+    "main.6025d8f0.js.map": "/sayag-studio/static/js/main.6025d8f0.js.map"
   },
   "entrypoints": [
     "static/css/main.e0299534.css",
-    "static/js/main.67d3279e.js"
+    "static/js/main.6025d8f0.js"
   ]
 }
