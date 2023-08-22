@@ -6,7 +6,7 @@ const en = {
       ` Ever since I can remember, I've been the "photographer of the group."`,
 
       "About 5 years ago, I finished my army service and decided to go after my dream wholeheartedly ( no looking back!)",
-      `In the past year, I established "Sage Studio," a magical studio located in Talpiot, Jerusalem, that will provide you with all the creative and visual solutions to make your business soar!`,
+      `In the past year, I established "Sayag Studio," a magical studio located in Talpiot, Jerusalem, that will provide you with all the creative and visual solutions to make your business soar!`,
 
       `Service is our number one priority! 
     Understanding and strategizing exactly what our customers need.`,
@@ -19,6 +19,7 @@ const en = {
       "- Cost-effective packages for content creators and influencers.",
     ],
     btnAction: "contact us",
+    credit: "credit: S. Gelber",
   },
   contact: {
     location: { hl: "Our office", address: "HaUman St 14, Jerusalem, Israel" },

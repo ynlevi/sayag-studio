@@ -41,6 +41,9 @@ export default function About() {
           src={profileImg}
           alt="profile-img"
         />
+        <p className="text-sm text-gray-400 font-light mt-1 text-end">
+          {t("about.credit")}
+        </p>
       </motion.div>
       <motion.div className="p-4 max-w-lg mx-auto lg:w-1/2 lg:my-auto ">
         <motion.h2
@@ -58,7 +61,7 @@ export default function About() {
           transition={{ stiffness: 150, type: "spring", delay: 0.6 }}
         >
           {he.about.p.map((p, i) => (
-            <p key={i} className="py-1 text-gray-400 y-5">
+            <p key={i} className="py-1 text-gray-500  y-5">
               {t(`about.p.${i}`)}
             </p>
           ))}

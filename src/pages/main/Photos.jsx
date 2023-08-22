@@ -8,14 +8,14 @@ import { motion } from "framer-motion";
 export default function Photos() {
   return (
     <motion.div className="snap-y snap-mandatory h-90vh md:h-screen overflow-scroll divide-y ">
-      {bestImagesNames.map((imageObj, i) => (
-        <Media key={i} {...imageObj} i={i} />
+      {bestImagesNames.map((image, i) => (
+        <Media key={i} image={image} i={i} />
       ))}
     </motion.div>
   );
 }
 
-const Media = ({ name, i }) => {
+const Media = ({ image, i }) => {
   return (
     <div
       className={`snap-start h-full flex justify-center items-center  ${
@@ -23,19 +23,23 @@ const Media = ({ name, i }) => {
       } `}
     >
       <img
-        src={require(`../../data/media/images/${name}.jpg`)}
-        alt={name}
-        className=" md:h-90vh w-full h-full object-contain"
+        src={require(`../../data/media/images/${image}.jpg`)}
+        alt={image}
+        className="md:h-90vh w-full h-full object-contain"
       />
     </div>
   );
 };
-
 const bestImagesNames = [
-  { name: "zebra", type: "img" },
-  { name: "africa-girls", type: "img" },
-  { name: "truck-and-view", type: "img" },
-  { name: "old-city-jerusalem", type: "img" },
-  { name: "bus-stop", type: "img" },
-  { name: "romantic", type: "img" },
+  "zebra",
+  "africa-girls",
+  "bus-stop",
+  "misgad",
+  "old-city-jerusalem",
+  "foods",
+  "shnizel",
+  "yossi",
+  "model1",
+  "model2",
+  "romantic",
 ];
