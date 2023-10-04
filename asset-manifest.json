@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/sayag-studio/static/css/main.9ce202de.css",
-    "main.js": "/sayag-studio/static/js/main.f11f33a9.js",
+    "main.css": "/sayag-studio/static/css/main.a70d2282.css",
+    "main.js": "/sayag-studio/static/js/main.74f6d56d.js",
     "static/media/old-city-jerusalem.jpg": "/sayag-studio/static/media/old-city-jerusalem.f67a70be763f68cdee3d.jpg",
     "static/media/main-video-1080p.mp4": "/sayag-studio/static/media/main-video-1080p.44f704b2a8226418b018.mp4",
     "static/media/video2-1080p.mp4": "/sayag-studio/static/media/video2-1080p.c845ca305fdca19e204e.mp4",
@@ -18,16 +18,17 @@
     "static/media/model2.jpg": "/sayag-studio/static/media/model2.0f9796ffec78e8608d9a.jpg",
     "static/media/model1.jpg": "/sayag-studio/static/media/model1.341628e52a9ed89499d2.jpg",
     "static/media/profile.jpg": "/sayag-studio/static/media/profile.1df4a57c51cdfc3b8573.jpg",
+    "static/media/logo.svg": "/sayag-studio/static/media/logo.06c7a9f643a312b71634c00f72b7d732.svg",
     "static/media/instagram.svg": "/sayag-studio/static/media/instagram.a522f96ffc8fae4be7cf14dae2048ae8.svg",
     "static/media/tiktok.svg": "/sayag-studio/static/media/tiktok.a0a16b4b93231a88316567a54f82180b.svg",
     "index.html": "/sayag-studio/index.html",
     "static/media/youtube.svg": "/sayag-studio/static/media/youtube.6806408aa1bf55b7f1aaba51978e649e.svg",
     "static/media/facebook.svg": "/sayag-studio/static/media/facebook.22d5e33c85b7691bd69150ce20e2d12b.svg",
-    "main.9ce202de.css.map": "/sayag-studio/static/css/main.9ce202de.css.map",
-    "main.f11f33a9.js.map": "/sayag-studio/static/js/main.f11f33a9.js.map"
+    "main.a70d2282.css.map": "/sayag-studio/static/css/main.a70d2282.css.map",
+    "main.74f6d56d.js.map": "/sayag-studio/static/js/main.74f6d56d.js.map"
   },
   "entrypoints": [
-    "static/css/main.9ce202de.css",
-    "static/js/main.f11f33a9.js"
+    "static/css/main.a70d2282.css",
+    "static/js/main.74f6d56d.js"
   ]
 }
